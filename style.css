@@ -7,7 +7,7 @@ body {
   padding: 0 10vw;
   background-color: var(--black);
   color: var(--purple);
-  font-family: sans-serif;
+  font-family: "Oxanium", sans-serif;
 }
 
 hr {
