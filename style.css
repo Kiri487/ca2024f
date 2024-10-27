@@ -70,6 +70,11 @@ input[type="checkbox"] {
   margin: 2.5rem 0;
 }
 
+.homework-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .homework-content {
   display: flex;
   justify-content: flex-end;
@@ -83,6 +88,7 @@ input[type="checkbox"] {
 
 .check-list {
   padding: 1.5rem 2.5rem;
+  width: 20vw;
   border: 3px solid var(--purple);
   border-radius: 20px;
 }
