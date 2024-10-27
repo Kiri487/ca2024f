@@ -1,10 +1,11 @@
 :root {
   --purple: #cda9ff;
+  --black: #181818;
 }
 
 body {
   padding: 0 10vw;
-  background-color: #181818;
+  background-color: var(--black);
   color: var(--purple);
   font-family: sans-serif;
 }
@@ -103,6 +104,7 @@ input[type="checkbox"] {
 
 .homework-button a:hover {
   background-color: var(--purple);
+  color: var(--black);
 }
 
 .cross-line {
