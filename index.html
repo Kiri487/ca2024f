@@ -20,11 +20,15 @@
       <!-- 動態捕捉與虛擬網紅 -->
     </div>
     <div class="intro">
-      <img class="" src="./me.jpg" height="256px">
+      <img class="" src="./me.jpg">
       <div class="intro-text">
         <h1 class="intro-title">× Kassus ×</h1>
         <div class="intro-content">
-          一些字
+          × × × 一位半人類半惡魔的少女，現正逃亡中 × × ×
+        </div>
+        <div class="intro-button">
+          <a class="button" href="https://github.com/Kiri487/ca2024f">GitHub</a>
+          <a class="button" href="https://booth.pm/zh-tw/items/6175539">Live2D Model</a>
         </div>
       </div>
       <div class="total-score">
@@ -38,9 +42,10 @@
       <div class="homework-content">
         <div class="left-content">
           <div class="video">
-            <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cGOVcye4kK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cGOVcye4kK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+          這個作業是角色的自我介紹，我姑且配合了角色的外型，根據故事七步驟，以第一人稱視角寫了基本的人物背景故事。<br>
+          但由於她的外觀並不是常見的設定，不管我跟 Copilot 強調多少次她的特徵，它都還是畫不出我理想中的圖，而且有時候還會一直跳針，給我重複的圖片，有點可惜。
         </div>
         <div class="right-content">
           <div class="check-list">
@@ -70,7 +75,7 @@
             </div> 
           </div>
           <div class="homework-button">
-            <a href="https://github.com/Kiri487/ca2024f/blob/main/hw01.pptx">投影片</a>
+            <a class="button" href="https://github.com/Kiri487/ca2024f/blob/main/hw01.pptx">投影片</a>
             <div class="cross-line"> × × × × × × </div>
           </div>
         </div>
@@ -79,8 +84,6 @@
     <hr>
 
     <script>
-      update();
-
       var hw = 1;  // number of homeworks
   
       for (var i = 1; i <= hw; i++) {
@@ -94,36 +97,30 @@
   
       function update() {
         var scoreTotal = 0;
-        var score = 0;
+
         for (var i = 1; i <= hw; i++) {
-          score = 0;
+          var score = 0;
           for (var j = 1; j <= 5; j++) {
             var myC = "#myCheckbox" + i + j;
             var myM = "#m" + i + j;
             var label = document.querySelector(`label[for="myCheckbox${i}${j}"]`);
 
             if (d3.select(myC).property("checked")) {
-              score += parseInt(d3.select(myM).html());
+              var value = parseInt(d3.select(myM).html()) || 0;
+              score += value;
               label.classList.add("strikethrough");
             } else {
               label.classList.remove("strikethrough");
             }
           }
+          
           var myT = "#myTotal" + i;
           d3.select(myT).html(score);
           scoreTotal += score;
         }
+
         d3.select("#myTotal").html(scoreTotal);
       }
-
-      document.querySelectorAll(".baseline-content label").forEach(label => {
-        label.addEventListener("click", function() {
-          var checkbox = document.getElementById(label.getAttribute("for"));
-          checkbox.checked = !checkbox.checked;
-          update();
-        });
-      });
-  
     </script>
   </body>
 </html>
