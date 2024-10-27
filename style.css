@@ -39,6 +39,7 @@ input[type="checkbox"] {
   display: flex;
   margin: 2.5rem 0;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .intro img {
@@ -62,6 +63,10 @@ input[type="checkbox"] {
   display: flex;
   padding: 1rem 0;
   flex-wrap: wrap;
+}
+
+.intro-button-media {
+  display: none;
 }
 
 .total-score span {
@@ -205,7 +210,8 @@ input[type="checkbox"] {
   }
 
   .video iframe {
-    height: 50vh;
+    width: 100%;
+    height: 50vw;
   }
 
   .right-content {
@@ -223,5 +229,19 @@ input[type="checkbox"] {
 
   .cross-line-media {
     display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    margin-bottom: 0;
+  }
+
+  .intro-button {
+    display: none;
+  }
+
+  .intro-button-media {
+    display: flex;
   }
 }
