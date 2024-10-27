@@ -22,7 +22,7 @@ input[type="checkbox"] {
 
 .button {
   padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
+  margin: 0.5rem;
   color: var(--purple);
   text-decoration:none;
   border: 3px solid var(--purple);
@@ -59,7 +59,9 @@ input[type="checkbox"] {
 }
 
 .intro-button {
-  margin-bottom: 2rem;
+  display: flex;
+  padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .total-score span {
@@ -129,9 +131,13 @@ input[type="checkbox"] {
 .cross-line {
   flex: 1;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5vw;
   font-weight: bold;
   color: var(--purple);
+}
+
+.cross-line-media {
+  display: none;
 }
 
 .left-content {
@@ -154,4 +160,67 @@ input[type="checkbox"] {
 
 .video iframe {
   border-radius: 10px;
+}
+
+/* media */
+
+@media (max-width: 1000px) {
+  body {
+    padding: 0 5vw;
+  }
+
+  .button {
+    width: fit-content;
+  }
+
+  .intro img {
+    height: 10rem;
+  }
+
+  .intro-title {
+    font-size: 1.5rem;
+  }
+
+  .intro-content {
+    font-size: 1rem;
+  }
+
+  .intro-button .button {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+  .total-score {
+    display: none;
+  }
+
+  .homework-content {
+    flex-direction: column;
+  }
+
+  .left-content {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .video iframe {
+    height: 50vh;
+  }
+
+  .right-content {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .check-list {
+    display: none;
+  }
+
+  .cross-line {
+    font-size: 4vw;
+  }
+
+  .cross-line-media {
+    display: block;
+  }
 }
