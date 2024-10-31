@@ -204,11 +204,18 @@
     </div>
     <hr>
     <div class="homework">
-      <h2 class="homework-title">× HW4 ×</h2>
+      <div class="homework-title">
+        <h2 class="title">× HW4 ×</h2>
+        <input type="radio" id="videoButton4" name="media4" checked>
+        <label for="videoButton4" class="button" style="font-size: 1rem;">影片</label>
+        <input type="radio" id="liveButton4" name="media4">
+        <label for="liveButton4" class="button" style="font-size: 1rem;">直播</label>
+      </div>
       <div class="homework-content">
         <div class="left-content">
           <div class="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1zR_ycSSbgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="video4" width="100%" height="100%" src="https://www.youtube.com/embed/1zR_ycSSbgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="live4" width="100%" height="100%" src="https://www.youtube.com/embed/u66RP_tuV7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           這次的故事是講述少女第一次執行任務的過程，作業要求要搭配 CC0 的影片，但我下載的影片檔案大小都蠻大的，加上我的筆電效能沒有到非常好，導致我錄影片時，3D 人物的動作會看起來有點卡，因此我必須額外把那些影片素材都先壓縮一遍，狀況才有改善。
         </div>
@@ -235,7 +242,7 @@
             </div> 
             <p class="baseline">Strong baseline</p>
             <div class="baseline-content">
-              <input type="checkbox" id="myCheckbox45">
+              <input type="checkbox" id="myCheckbox45" checked>
               <label for="myCheckbox45">(<span id='m45'>2</span>) OBS 直播到 YouTube</label>
             </div> 
           </div>
