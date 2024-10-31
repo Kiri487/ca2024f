@@ -48,14 +48,20 @@
     </div>
     <hr>
     <div class="homework">
-      <h2 class="homework-title">× HW1 ×</h2>
+      <div class="homework-title">
+        <h2 class="title">× HW1 ×</h2>
+        <input type="radio" id="videoButton1" name="media1" checked>
+        <label for="videoButton1" class="button" style="font-size: 1rem;">影片</label>
+        <input type="radio" id="liveButton1" name="media1">
+        <label for="liveButton1" class="button" style="font-size: 1rem;">直播</label>
+      </div>
       <div class="homework-content">
         <div class="left-content">
           <div class="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cGOVcye4kK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="video1" width="100%" height="100%" src="https://www.youtube.com/embed/cGOVcye4kK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="live1" width="100%" height="100%" src="https://www.youtube.com/embed/NmcJgLtOZzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          這個作業是角色的自我介紹，我姑且配合了角色的外型，根據故事七步驟，以第一人稱視角寫了基本的人物背景故事。<br>
-          但由於她的外觀並不是常見的設定，不管我跟 Copilot 強調多少次她的特徵，它都還是畫不出我理想中的圖，而且有時候還會跳針，一直給我重複的圖片，有點可惜。
+          這個作業是角色的自我介紹，我姑且配合了角色的外型，根據故事七步驟，以第一人稱視角寫了基本的人物背景故事。 但由於她的外觀並不是常見的設定，不管我跟 Copilot 強調多少次她的特徵，它都還是畫不出我理想中的圖，而且有時候還會跳針，一直給我重複的圖片，有點可惜。
         </div>
         <div class="right-content">
           <div class="check-list">
@@ -80,7 +86,7 @@
             </div> 
             <p class="baseline">Strong baseline</p>
             <div class="baseline-content">
-              <input type="checkbox" id="myCheckbox15">
+              <input type="checkbox" id="myCheckbox15" checked>
               <label for="myCheckbox15">(<span id='m15'>2</span>) OBS 直播到 YouTube</label>
             </div> 
           </div>
@@ -145,8 +151,7 @@
           <div class="video">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/P5s0iTYbAV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          這次的故事是關於少女剛到魔藥舖，開始進行「培訓」後的經歷。<br>
-          由於整個故事是走奇幻路線，我花了不少時間、換了很多不同的關鍵字，才找到勉強符合劇情的 CC0 照片，同時這也是課程中最後一次使用 Live2D 模型講故事，整體來說蠻有趣的。
+          這次的故事是關於少女剛到魔藥舖，開始進行「培訓」後的經歷。由於整個故事是走奇幻路線，我花了不少時間、換了很多不同的關鍵字，才找到勉強符合劇情的 CC0 照片，同時這也是課程中最後一次使用 Live2D 模型講故事，整體來說蠻有趣的。
         </div>
         <div class="right-content">
           <div class="check-list">
@@ -237,13 +242,16 @@
       for (var i = 1; i <= hw; i++) {
         for (var j = 1; j <= 5; j++) {
           var myC = "#myCheckbox" +  i + j ;
-          d3.select(myC).on("change", update);
+          d3.select(myC).on("change", updateScore);
         }
+        d3.select("#videoButton" + i).on("change", updateMedia);
+        d3.select("#liveButton" + i).on("change", updateMedia);
       }
 
-      update();
+      updateScore();
+      updateMedia();
   
-      function update() {
+      function updateScore() {
         var scoreTotal = 0;
 
         for (var i = 1; i <= hw; i++) {
@@ -257,7 +265,8 @@
               var value = parseInt(d3.select(myM).html()) || 0;
               score += value;
               label.classList.add("strikethrough");
-            } else {
+            } 
+            else {
               label.classList.remove("strikethrough");
             }
           }
@@ -265,9 +274,38 @@
           var myT = "#myTotal" + i;
           d3.select(myT).html(score);
           scoreTotal += score;
+        
         }
 
         d3.select("#myTotal").html(scoreTotal);
+      }
+
+      function updateMedia() {
+        for (var i = 1; i <= hw; i++) {
+          var videoBtn = "#videoButton" + i;
+          var liveBtn = "#liveButton" + i;
+          var videoBtnLabel = document.querySelector(`label[for="videoButton${i}"]`);
+          var liveBtnLabel = document.querySelector(`label[for="liveButton${i}"]`);
+          var video = "#video" + i;
+          var live = "#live" + i;
+
+          if (d3.select(videoBtn).property("checked")) {
+            d3.select(video).style("display", "block");
+            d3.select(live).style("display", "none");
+            d3.select(videoBtnLabel).style("background-color", "var(--purple)");
+            d3.select(videoBtnLabel).style("color", "var(--black)");
+            d3.select(liveBtnLabel).style("background-color", "var(--black)");
+            d3.select(liveBtnLabel).style("color", "var(--purple)");
+          } 
+          else if (d3.select(liveBtn).property("checked")) {
+            d3.select(video).style("display", "none");
+            d3.select(live).style("display", "block");
+            d3.select(liveBtnLabel).style("background-color", "var(--purple)");
+            d3.select(liveBtnLabel).style("color", "var(--black)");
+            d3.select(videoBtnLabel).style("background-color", "var(--black)");
+            d3.select(videoBtnLabel).style("color", "var(--purple)");
+          }
+        }
       }
     </script>
   </body>

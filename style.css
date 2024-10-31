@@ -20,6 +20,10 @@ input[type="checkbox"] {
   display: none;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 .button {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
@@ -79,8 +83,24 @@ input[type="checkbox"] {
 }
 
 .homework-title {
+  display: flex;
+  align-items: center;
+}
+
+.homework-title label{
+  height: fit-content;
+}
+
+.homework-title label:hover {
+  cursor: pointer;
+  background-color: var(--purple);
+  color: var(--black);
+}
+
+.title {
   font-size: 2rem;
   font-weight: bold;
+  margin-right: 1rem;
 }
 
 .homework-content {
