@@ -93,8 +93,6 @@ input[type="radio"] {
 
 .homework-title label:hover {
   cursor: pointer;
-  background-color: var(--purple);
-  color: var(--black);
 }
 
 .title {

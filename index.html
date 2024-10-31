@@ -100,11 +100,18 @@
     </div>
     <hr>
     <div class="homework">
-      <h2 class="homework-title">× HW2 ×</h2>
+      <div class="homework-title">
+        <h2 class="title">× HW2 ×</h2>
+        <input type="radio" id="videoButton2" name="media2" checked>
+        <label for="videoButton2" class="button" style="font-size: 1rem;">影片</label>
+        <input type="radio" id="liveButton2" name="media2">
+        <label for="liveButton2" class="button" style="font-size: 1rem;">直播</label>
+      </div>
       <div class="homework-content">
         <div class="left-content">
           <div class="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9o56QaHGGBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="video2" width="100%" height="100%" src="https://www.youtube.com/embed/9o56QaHGGBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="live2" width="100%" height="100%" src="https://www.youtube.com/embed/bFbJmLhmiqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           這次的故事是描述少女從家裡逃出來後的遭遇，由於故事中出現了配角，因此我讓 Copilot 畫了幾張同時有兩個角色的圖，我嘗試讓它不要一直畫主角的正面圖，但它看起來還是不太會畫背面，總會出現身體是背面，但身上的衣服看起來卻像正面的情形。
         </div>
@@ -131,7 +138,7 @@
             </div> 
             <p class="baseline">Strong baseline</p>
             <div class="baseline-content">
-              <input type="checkbox" id="myCheckbox25">
+              <input type="checkbox" id="myCheckbox25" checked>
               <label for="myCheckbox25">(<span id='m25'>2</span>) OBS 直播到 YouTube</label>
             </div> 
           </div>
