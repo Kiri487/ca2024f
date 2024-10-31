@@ -152,11 +152,18 @@
     </div>
     <hr>
     <div class="homework">
-      <h2 class="homework-title">× HW3 ×</h2>
+      <div class="homework-title">
+        <h2 class="title">× HW3 ×</h2>
+        <input type="radio" id="videoButton3" name="media3" checked>
+        <label for="videoButton3" class="button" style="font-size: 1rem;">影片</label>
+        <input type="radio" id="liveButton3" name="media3">
+        <label for="liveButton3" class="button" style="font-size: 1rem;">直播</label>
+      </div>
       <div class="homework-content">
         <div class="left-content">
           <div class="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/P5s0iTYbAV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="video3" width="100%" height="100%" src="https://www.youtube.com/embed/P5s0iTYbAV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="live3" width="100%" height="100%" src="https://www.youtube.com/embed/gzQr1trfmb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           這次的故事是關於少女剛到魔藥舖，開始進行「培訓」後的經歷。由於整個故事是走奇幻路線，我花了不少時間、換了很多不同的關鍵字，才找到勉強符合劇情的 CC0 照片，同時這也是課程中最後一次使用 Live2D 模型講故事，整體來說蠻有趣的。
         </div>
@@ -183,7 +190,7 @@
             </div> 
             <p class="baseline">Strong baseline</p>
             <div class="baseline-content">
-              <input type="checkbox" id="myCheckbox35">
+              <input type="checkbox" id="myCheckbox35" checked>
               <label for="myCheckbox35">(<span id='m35'>2</span>) OBS 直播到 YouTube</label>
             </div> 
           </div>
