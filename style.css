@@ -16,6 +16,12 @@ hr {
   border: none;
 }
 
+footer {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
 .title {
   font-size: 2rem;
   font-weight: bold;
